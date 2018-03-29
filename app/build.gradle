@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+    packagingOptions {
+        //  this is my setting:
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+    greendao {
+        schemaVersion 3
+        daoPackage 'com.lsege.fazhan.coin.gen'
+        targetGenDir 'src/main/java'
+    }
+    signingConfigs {
+    }
+    defaultConfig {
+        ndk {
+            //设置支持的SO库架构
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+        multiDexEnabled  = true
+        applicationId "com.lsege.fazhan.coin"
+        minSdkVersion MIN_SDK_VERSION
+        targetSdkVersion TARGET_SDK_VERSION
+        versionCode VERSION_CODE.toInteger()
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile('cn.qqtheme.framework:WheelPicker:latest.release') {
+        exclude group: 'com.android.support'
+    }
+    compile project(path: ':fastlibrary')
+    compile project(':swipelayout')
+    compile project(path: ':uikit')
+    compile project(':faceunity')
+    compile project(':library')
+    compile project(':bottomlibrary')
+    compile 'com.github.LuoGuoXin:BaseAndroid:1.0.5'
+    // add library
+    compile 'com.github.sd6352051:NiftyDialogEffects:v1.0.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.mylhyl:circleDialog:2.1.6'
+    compile 'com.github.mcxtzhang:SuspensionIndexBar:V1.0.0'
+    compile 'com.github.razerdp:BasePopup:latest.release'
+    compile 'com.github.LuckSiege.PictureSelector:picture_library:v2.1.6'
+    compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'cn.bingoogolapple:bga-qrcode-zbar:1.2.0'
+    compile 'cn.bingoogolapple:bga-qrcode-zxing:1.2.0'
+    compile 'com.zhy:flowlayout-lib:1.0.3'
+    compile 'com.aliyun.dpa:oss-android-sdk:2.4.5'
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:support-v4:26.+'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'org.greenrobot:greendao:3.2.2'
+    // add library
+    //  compile 'org.greenrobot:greendao:3.2.2'
+    testCompile 'junit:junit:4.12'
+}

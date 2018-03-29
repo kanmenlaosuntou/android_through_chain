@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android_through_chain.iml" filepath="$PROJECT_DIR$/android_through_chain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bottomlibrary/bottomlibrary.iml" filepath="$PROJECT_DIR$/bottomlibrary/bottomlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/faceunity/faceunity.iml" filepath="$PROJECT_DIR$/faceunity/faceunity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fastlibrary/fastlibrary.iml" filepath="$PROJECT_DIR$/fastlibrary/fastlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/swipelayout/swipelayout.iml" filepath="$PROJECT_DIR$/swipelayout/swipelayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uikit/uikit.iml" filepath="$PROJECT_DIR$/uikit/uikit.iml" />
+    </modules>
+  </component>
+</project>
