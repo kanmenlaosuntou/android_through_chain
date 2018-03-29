@@ -27,7 +27,7 @@ android {
         }
         multiDexEnabled  = true
         applicationId "com.lsege.fazhan.coin"
-        minSdkVersion MIN_SDK_VERSION
+        minSdkVersion 21
         targetSdkVersion TARGET_SDK_VERSION
         versionCode VERSION_CODE.toInteger()
         versionName "1.0"
